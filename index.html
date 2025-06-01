@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oresto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Oresto - fin d'ARG!
+        </h1>
+        <form id="ticketForm">
+            <label for="winnerName">Pseudo :</label>
+            <input type="text" id="winnerName" required>
+            <button type="submit">Générer le ticket</button>
+        </form>
+
+        <div id="ticketContainer" class="ticket-container">
+            <div class="ticket">
+                <p class="ticket-title">Ticket Resto</p>
+                <p>Félicitations, <span id="displayedName"></span> !</p>
+                <p class="timestamp" id="displayedTimestamp"></p>
+                <p class="message">go DM jako !</p>
+                </div>
+            <button id="downloadTicket">Télécharger le ticket (Image)</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
