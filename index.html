@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Générateur de Ticket de Victoire</title>
+    <title>Oresto</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <audio id="backgroundMusic" src="musique_arg.mp3" preload="auto" muted></audio>
     
     <div class="login-container" id="loginContainer">
-        <h2>Accès au Générateur de Ticket</h2>
+        <h2>Oresto ! - Fin d'ARG
         <form id="passwordForm">
             <label for="passwordInput">Mot de passe :</label>
             <input type="password" id="passwordInput" required>
@@ -19,22 +19,22 @@
     </div>
 
     <div class="container" id="mainContent" style="display: none;">
-        <h1>Générateur de Ticket de Victoire</h1>
+        <h1>Ticket Resto, fin d'ARG !</h1>
         <form id="ticketForm">
-            <label for="winnerName">Nom du gagnant :</label>
+            <label for="winnerName">Pseudo :</label>
             <input type="text" id="winnerName" required>
             <button type="submit">Générer le ticket</button>
         </form>
 
         <div id="ticketContainer" class="ticket-container">
             <div class="ticket">
-                <p class="ticket-title">Ticket de Victoire</p>
+                <p class="ticket-title">Ticker Resto</p>
                 <p>Félicitations, <span id="displayedName"></span> !</p>
                 <p class="timestamp" id="displayedTimestamp"></p>
-                <p class="message">Votre victoire est la clé de la prochaine étape de l'ARG !</p>
+                <p class="message">Go DM jako !</p>
             </div>
             <button id="toggleMuteBtn" class="mute-button">Activer le son</button>
-            <button id="downloadTicket">Télécharger le ticket (Image)</button>
+            <button id="downloadTicket">Télécharger le ticket</button>
         </div>
     </div>
 

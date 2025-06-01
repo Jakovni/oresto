@@ -165,7 +165,7 @@ button:hover {
 .mute-button {
     margin-top: 15px;
     padding: 8px 15px;
-    background-color: #3498db;
+    background-color: #0ba820;
     color: white;
     border: none;
     border-radius: 5px;
@@ -176,5 +176,5 @@ button:hover {
 }
 
 .mute-button:hover {
-    background-color: #2980b9;
+    background-color: #07614a;
 }

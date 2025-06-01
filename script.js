@@ -25,19 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
             loginContainer.style.display = 'none';
             mainContent.style.display = 'block';
             
-            // RENDRE LE BOUTON VISIBLE IMMEDIATEMENT
+        
             if (toggleMuteBtn) {
                 toggleMuteBtn.style.display = 'inline-block';
             }
 
-            // Tenter de lancer la musique. Même si elle est bloquée, le bouton manuel est là.
+        
             backgroundMusic.play()
                 .then(() => {
-                    // La musique a commencé (probablement muette)
+                
                     console.log("Musique tentée de jouer. Vérifiez si elle est muette.");
                 })
                 .catch(error => {
-                    // La lecture automatique a été bloquée ou a échoué
+                
                     console.error("Erreur lors du lancement automatique de la musique :", error);
                     alert("Le navigateur a bloqué la lecture automatique de la musique. Cliquez sur 'Activer le son' pour la démarrer.");
                 });
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (toggleMuteBtn) {
         toggleMuteBtn.addEventListener('click', () => {
-            if (backgroundMusic.paused) { // Si la musique est en pause, la reprendre
+            if (backgroundMusic.paused) {
                 backgroundMusic.play();
             }
 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleMuteBtn.textContent = 'Activer le son';
             }
         });
-        // Le bouton est initialement masqué, il est affiché après validation du mot de passe
+    
         toggleMuteBtn.style.display = 'none';
     }
 
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayedTimestamp.textContent = timestamp;
             ticketContainer.style.display = 'block';
         } else {
-            alert('Veuillez entrer le nom du gagnant.');
+            alert('Veuillez entrer le pseudo du gagnant.');
         }
     });
 
