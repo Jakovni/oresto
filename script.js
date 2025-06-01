@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayedTimestamp = document.getElementById('displayedTimestamp');
     const downloadTicketBtn = document.getElementById('downloadTicket');
     const ticketElement = document.querySelector('.ticket');
-
+    const playMusicBtn = document.getElementById('playMusicBtn');
 
     const CORRECT_PASSWORD = "digestion";
 
@@ -28,7 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (enteredPassword === CORRECT_PASSWORD) {
             loginContainer.style.display = 'none';
             mainContent.style.display = 'block';
-            
+             
+            if (playMusicBtn) {
+                playMusicBtn.style.display = 'inline-block';
+            }
+
         
             backgroundMusic.play()
                 .then(() => {
