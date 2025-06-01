@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('mainContent');
 
 
+    const backgroundMusic = document.getElementById('backgroundMusic');
+
+
     const ticketForm = document.getElementById('ticketForm');
     const winnerNameInput = document.getElementById('winnerName');
     const ticketContainer = document.getElementById('ticketContainer');
@@ -25,6 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (enteredPassword === CORRECT_PASSWORD) {
             loginContainer.style.display = 'none';
             mainContent.style.display = 'block';
+            
+        
+            backgroundMusic.play()
+                .then(() => {
+                    console.log("Musique lancée avec succès !");
+                })
+                .catch(error => {
+                    console.error("Erreur lors du lancement de la musique :", error);
+                    alert("Impossible de lancer la musique. Le navigateur a peut-être bloqué la lecture automatique.");
+                });
+
         } else {
             alert('Mot de passe incorrect. Veuillez réessayer.');
             passwordInput.value = '';
@@ -34,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ticketForm.addEventListener('submit', (event) => {
         event.preventDefault();
-
+        
         const winnerName = winnerNameInput.value.trim();
-
+        
         if (winnerName) {
             const now = new Date();
             const timestamp = now.toLocaleString('fr-FR', {
@@ -52,13 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
             displayedTimestamp.textContent = timestamp;
             ticketContainer.style.display = 'block';
         } else {
-            alert('Veuillez entrer le nom du gagnant.');
+            alert('Entrez votre pseudo');
         }
     });
 
     downloadTicketBtn.addEventListener('click', () => {
         downloadTicketBtn.style.display = 'none'; 
-
+        
         html2canvas(ticketElement, { 
             scale: 2,
             backgroundColor: null
