@@ -7,11 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Oresto - fin d'ARG!
-        </h1>
+    <div class="login-container" id="loginContainer">
+        <h2>Oresto - Fin d'ARG !</h2>
+        <form id="passwordForm">
+            <label for="passwordInput">Mdp :</label>
+            <input type="password" id="passwordInput" required>
+            <button type="submit">Accéder</button>
+        </form>
+    </div>
+
+    <div class="container" id="mainContent" style="display: none;">
+        <h1>Ticket Resto</h1>
         <form id="ticketForm">
-            <label for="winnerName">Pseudo :</label>
+            <label for="winnerName">Pseudo</label>
             <input type="text" id="winnerName" required>
             <button type="submit">Générer le ticket</button>
         </form>
@@ -21,9 +29,9 @@
                 <p class="ticket-title">Ticket Resto</p>
                 <p>Félicitations, <span id="displayedName"></span> !</p>
                 <p class="timestamp" id="displayedTimestamp"></p>
-                <p class="message">go DM jako !</p>
-                </div>
-            <button id="downloadTicket">Télécharger le ticket (Image)</button>
+                <p class="message">Go DM jako !</p>
+            </div>
+            <button id="downloadTicket">Télécharger le ticket</button>
         </div>
     </div>
 

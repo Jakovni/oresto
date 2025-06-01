@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    const loginContainer = document.getElementById('loginContainer');
+    const passwordForm = document.getElementById('passwordForm');
+    const passwordInput = document.getElementById('passwordInput');
+    const mainContent = document.getElementById('mainContent');
+
+
     const ticketForm = document.getElementById('ticketForm');
     const winnerNameInput = document.getElementById('winnerName');
     const ticketContainer = document.getElementById('ticketContainer');
@@ -7,10 +14,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadTicketBtn = document.getElementById('downloadTicket');
     const ticketElement = document.querySelector('.ticket');
 
+
+    const CORRECT_PASSWORD = "digestion";
+
+
+    passwordForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const enteredPassword = passwordInput.value;
+
+        if (enteredPassword === CORRECT_PASSWORD) {
+            loginContainer.style.display = 'none';
+            mainContent.style.display = 'block';
+        } else {
+            alert('Mot de passe incorrect. Veuillez réessayer.');
+            passwordInput.value = '';
+        }
+    });
+
+
     ticketForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        
+
         const winnerName = winnerNameInput.value.trim();
+
         if (winnerName) {
             const now = new Date();
             const timestamp = now.toLocaleString('fr-FR', {
@@ -31,21 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     downloadTicketBtn.addEventListener('click', () => {
-    
         downloadTicketBtn.style.display = 'none'; 
-        
-        
+
         html2canvas(ticketElement, { 
             scale: 2,
             backgroundColor: null
         }).then(canvas => {
-        
             const link = document.createElement('a');
             link.download = 'ticket_victoire.png';
             link.href = canvas.toDataURL('image/png');
             link.click();
 
-         
             downloadTicketBtn.style.display = 'block';
         });
     });
