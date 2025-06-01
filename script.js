@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const loginContainer = document.getElementById('loginContainer');
     const passwordForm = document.getElementById('passwordForm');
     const passwordInput = document.getElementById('passwordInput');
     const mainContent = document.getElementById('mainContent');
 
-
     const backgroundMusic = document.getElementById('backgroundMusic');
-
+    const toggleMuteBtn = document.getElementById('toggleMuteBtn');
 
     const ticketForm = document.getElementById('ticketForm');
     const winnerNameInput = document.getElementById('winnerName');
@@ -16,10 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayedTimestamp = document.getElementById('displayedTimestamp');
     const downloadTicketBtn = document.getElementById('downloadTicket');
     const ticketElement = document.querySelector('.ticket');
-    const playMusicBtn = document.getElementById('playMusicBtn');
 
     const CORRECT_PASSWORD = "digestion";
-
 
     passwordForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -28,19 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (enteredPassword === CORRECT_PASSWORD) {
             loginContainer.style.display = 'none';
             mainContent.style.display = 'block';
-             
-            if (playMusicBtn) {
-                playMusicBtn.style.display = 'inline-block';
+            
+            // RENDRE LE BOUTON VISIBLE IMMEDIATEMENT
+            if (toggleMuteBtn) {
+                toggleMuteBtn.style.display = 'inline-block';
             }
 
-        
+            // Tenter de lancer la musique. Même si elle est bloquée, le bouton manuel est là.
             backgroundMusic.play()
                 .then(() => {
-                    console.log("Musique lancée avec succès !");
+                    // La musique a commencé (probablement muette)
+                    console.log("Musique tentée de jouer. Vérifiez si elle est muette.");
                 })
                 .catch(error => {
-                    console.error("Erreur lors du lancement de la musique :", error);
-                    alert("Impossible de lancer la musique. Le navigateur a peut-être bloqué la lecture automatique.");
+                    // La lecture automatique a été bloquée ou a échoué
+                    console.error("Erreur lors du lancement automatique de la musique :", error);
+                    alert("Le navigateur a bloqué la lecture automatique de la musique. Cliquez sur 'Activer le son' pour la démarrer.");
                 });
 
         } else {
@@ -49,23 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
- if (playMusicBtn) {
-        playMusicBtn.addEventListener('click', () => {
-            backgroundMusic.play()
-                .then(() => {
-                    console.log("Musique lancée suite au clic de l'utilisateur !");
-                    playMusicBtn.style.display = 'none';
-                })
-                .catch(error => {
-                    console.error("Erreur lors du lancement de la musique :", error);
-                    alert("Impossible de lancer la musique. Veuillez vérifier vos paramètres de navigateur.");
-                });
+    if (toggleMuteBtn) {
+        toggleMuteBtn.addEventListener('click', () => {
+            if (backgroundMusic.paused) { // Si la musique est en pause, la reprendre
+                backgroundMusic.play();
+            }
+
+            if (backgroundMusic.muted) {
+                backgroundMusic.muted = false;
+                toggleMuteBtn.textContent = 'Désactiver le son';
+            } else {
+                backgroundMusic.muted = true;
+                toggleMuteBtn.textContent = 'Activer le son';
+            }
         });
-        playMusicBtn.style.display = 'none';
+        // Le bouton est initialement masqué, il est affiché après validation du mot de passe
+        toggleMuteBtn.style.display = 'none';
     }
 
-  
-});
     ticketForm.addEventListener('submit', (event) => {
         event.preventDefault();
         
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayedTimestamp.textContent = timestamp;
             ticketContainer.style.display = 'block';
         } else {
-            alert('Entrez votre pseudo');
+            alert('Veuillez entrer le nom du gagnant.');
         }
     });
 

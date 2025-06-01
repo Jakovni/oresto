@@ -37,7 +37,8 @@ label {
     font-size: 1.1em;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     padding: 10px;
     width: calc(100% - 22px);
     margin-bottom: 20px;
@@ -75,7 +76,7 @@ button:hover {
     background-color: #3b5a3b;
     background-image: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(0,0,0,0.1) 100%),
                       radial-gradient(ellipse at center, rgba(0,255,0,0.15) 0%, transparent 70%),
-                      url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3NSIgZmlsbD0iIzQ2NjY0NiIvPjxjaXJjbGUgY3g9IjI1IiBjeT0iNzUiIHI9IjEwIiBmaWxsPSIjNTA3NzUwIi8+PGNpcmNsZSBjeD0iMTc1IiBjeT0iMTI1IiByPSIxMiIgZmlsbD0iIzYwODY2MCIvPjxjaXJjbGUgY2U9IjUwIiBjeT0iMTcwIiByPSI4IiBmaWxsPSIjMzg1NzM4Ii8+PC9zdmc+'); /* Effet marbre subtil avec SVG intégré */
+                      url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI3NSIgZmlsbD0iIzQ2NjY0NiIvPjxjaXJjbGUgY3g9IjI1IiBjeT0iNzUiIHI9IjEwIiBmaWxsPSIjNTA3NzUwIi8+PGNpcmNsZSBjeD0iMTc1IiBjeT0iMTI1IiByPSIxMiIgZmlsbD0iIzYwODY2MCIvPjxjaXJjbGUgY2U9IjUwIiBjeT0iMTcwIiByPSI4IiBmaWxsPSIjMzg1NzM4Ii8+PC9zdmc+');
     background-repeat: no-repeat;
     background-size: cover;
     padding: 30px;
@@ -93,7 +94,6 @@ button:hover {
     justify-content: space-around;
 }
 
-
 .ticket::before {
     content: '';
     position: absolute;
@@ -105,7 +105,6 @@ button:hover {
     border-radius: 15px;
     pointer-events: none;
 }
-
 
 .ticket-title {
     font-size: 2em;
@@ -126,7 +125,6 @@ button:hover {
     font-size: 1.1em;
     color: #c0f0c0;
 }
-
 
 #downloadTicket {
     background-color: #28a745;
@@ -164,20 +162,10 @@ button:hover {
     font-size: 1.1em;
 }
 
-.login-container input[type="password"] {
-    padding: 10px;
-    width: calc(100% - 22px);
-    margin-bottom: 20px;
-    border: 2px solid #00ff00;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 1em;
-}
-.play-music-button {
+.mute-button {
     margin-top: 15px;
     padding: 8px 15px;
-    background-color: #099c53;
+    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
@@ -187,6 +175,6 @@ button:hover {
     margin-right: 10px;
 }
 
-.play-music-button:hover {
-    background-color: #d35400;
+.mute-button:hover {
+    background-color: #2980b9;
 }
