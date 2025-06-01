@@ -45,7 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+ if (playMusicBtn) {
+        playMusicBtn.addEventListener('click', () => {
+            backgroundMusic.play()
+                .then(() => {
+                    console.log("Musique lancée suite au clic de l'utilisateur !");
+                    playMusicBtn.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error("Erreur lors du lancement de la musique :", error);
+                    alert("Impossible de lancer la musique. Veuillez vérifier vos paramètres de navigateur.");
+                });
+        });
+        playMusicBtn.style.display = 'none';
+    }
 
+  
+});
     ticketForm.addEventListener('submit', (event) => {
         event.preventDefault();
         
