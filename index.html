@@ -8,15 +8,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="backgroundMusic" src="musique_arg.mp3" preload="auto"></audio>
-    <div class="login-container" id="loginContainer">
-        <h2>Oresto - Fin d'ARG !</h2>
-        <form id="passwordForm">
-            <label for="passwordInput">Mdp :</label>
-            <input type="password" id="passwordInput" required>
-            <button type="submit">Accéder</button>
-        </form>
+<audio id="backgroundMusic" src="musique_arg.mp3" preload="auto"></audio>
+
+<div class="container" id="mainContent" style="display: none;">
+    <div id="ticketContainer" class="ticket-container">
+        <button id="playMusicBtn" class="play-music-button">play</button>
+        <button id="downloadTicket">Télécharger le ticket</button>
     </div>
+</div>
 
     <div class="container" id="mainContent" style="display: none;">
         <h1>Ticket Resto</h1>
