@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Mondwest'; /* Choisissez un nom facile à retenir pour votre police */
-    src: url('mondwest.otp') format('opentype'); /* Chemin vers votre fichier de police et son format */
+    src: url('mondwest.otf') format('opentype'); /* Chemin vers votre fichier de police et son format */
     /* Si vous avez plusieurs formats (recommandé pour la compatibilité) : */
     /*
     src: url('MaSuperPolice.woff2') format('woff2'),
@@ -38,7 +38,7 @@ h1 {
 /* Le reste de votre CSS... */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Mondwest', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,6 +97,7 @@ button {
     font-size: 1.1em;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Mondwest', sans-serif;
 }
 
 button:hover {
