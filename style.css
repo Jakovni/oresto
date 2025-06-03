@@ -1,3 +1,41 @@
+@font-face {
+    font-family: 'Mondwest'; /* Choisissez un nom facile à retenir pour votre police */
+    src: url('mondwest.otp') format('truetype'); /* Chemin vers votre fichier de police et son format */
+    /* Si vous avez plusieurs formats (recommandé pour la compatibilité) : */
+    /*
+    src: url('MaSuperPolice.woff2') format('woff2'),
+         url('MaSuperPolice.woff') format('woff'),
+         url('MaSuperPolice.ttf') format('truetype');
+    */
+    font-weight: normal; /* ou bold, selon le style que vous déclarez */
+    font-style: normal;  /* ou italic */
+    /*
+    display: swap; Si vous voulez une optimisation de chargement (moins prioritaire, mais bonne pratique)
+    */
+}
+/* --- Fin de la déclaration de police --- */
+
+body {
+    margin: 0;
+    font-family: 'Mondwest', sans-serif; /* Utilisez le nom que vous avez choisi ci-dessus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('fond.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+h1 {
+    font-family: 'NomDeMaPolicePerso', cursive;
+    color: #00ff00;
+    margin-bottom: 20px;
+}
+
+/* Le reste de votre CSS... */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
